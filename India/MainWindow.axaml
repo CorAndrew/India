@@ -1,0 +1,51 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="India.MainWindow"
+        Title="India">
+    <ScrollViewer>
+        <Grid ColumnDefinitions="*, *" Margin="20">
+
+            <StackPanel Grid.Column="0" Spacing="8" Margin="0,0,10,0">
+                <TextBlock Text="Ristorante indiano" FontWeight="Bold" FontSize="16"/>
+                
+                <TextBlock Text="Cibo da ordianre"/>
+                <ComboBox Name="CmbCibo" SelectedIndex="0" HorizontalAlignment="Stretch">
+                    <ComboBoxItem Content="Samosa"/>
+                    <ComboBoxItem Content="Pakora"/>
+                    <ComboBoxItem Content="Chicken tikka"/>
+                    <ComboBoxItem Content="Butter Chicken"/>
+                    <ComboBoxItem Content="Chicken Curry"/>
+                    <ComboBoxItem Content="Palak Paneer"/>
+                    <ComboBoxItem Content="Dal"/>
+                    <ComboBoxItem Content="Biryani"/>
+                    <ComboBoxItem Content="Naan"/>
+                    <ComboBoxItem Content="Gulab Jamun"/>
+                </ComboBox>
+                
+                <TextBlock Text="Numero del tavolo"/>
+                <TextBox Name="TxtTavolo"/>
+
+                <TextBlock Text="Numero di piatti"/>
+                <NumericUpDown Name="NumPiatti" Minimum="1" Maximum="99" Value="1"/>
+
+                <Button Name="BtnPrenota" Content="Prenota tavolo" Click="BtnPrenota_Click"/>
+                
+                <TextBlock Name="TxtErrori" TextWrapping="Wrap" FontWeight="Bold"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1" Spacing="8" Margin="10,0,0,0">
+                <TextBlock Text="Lista dei tavoli" FontWeight="Bold" FontSize="16"/>
+                
+                <ListBox Name="ListaTavoli" Height="150"/>
+                
+                <Button Name="BtnLibera" Content="Libera tavolo selezionato" Click="BtnLibera_Click"/>
+                <TextBlock Name="TxtStatistiche" FontWeight="Bold"/>
+       
+            </StackPanel>
+            
+        </Grid>
+    </ScrollViewer>
+</Window>
